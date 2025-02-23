@@ -13,7 +13,7 @@ export const StepFinish = () => {
 
     const message = GenerateMessage();
 
-    const linkZap = `http://wa.me//${process.env.NEXT_PUBLIC_ZAP}?text=${encodeURI(message)}`;
+    const linkZap = `https://wa.me//${process.env.NEXT_PUBLIC_ZAP}?text=${encodeURI(message)}`;
 
     const handleFinish = () => {
         window.location.reload();
@@ -23,8 +23,8 @@ export const StepFinish = () => {
         <div className="text-center flex flex-col gap-5">
             <p>Perfeito, <strong>{name}</strong></p>
             <p>Agora envie seu pedido para o nosso WhatsApp para concluir.</p>
-                <Link href={linkZap} onClick={handleFinish}  className="p-0">
-                <Button className="m-0 w-full bg-green-400 hover:bg-green-300">Enviar para o <strong>WhatsApp</strong></Button>
+                <Link href={linkZap} onClick={handleFinish} target="_blank" className="p-0">
+                    <Button className="m-0 w-full bg-green-400 hover:bg-green-300">Enviar para o <strong>WhatsApp</strong></Button>
                 </Link>
                 <Button onClick={handleFinish} variant={"link"}><ReplyIcon />Fazer novo pedido</Button>
         </div>
