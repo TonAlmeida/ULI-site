@@ -23,7 +23,7 @@ export const StepFinish = () => {
         <div className="text-center flex flex-col gap-5">
             <p>Perfeito, <strong>{name}</strong></p>
             <p>Agora envie seu pedido para o nosso WhatsApp para concluir.</p>
-                <Link href={linkZap} className="p-0">
+                <Link href={linkZap} onClick={handleFinish}  className="p-0">
                 <Button className="m-0 w-full bg-green-400 hover:bg-green-300">Enviar para o <strong>WhatsApp</strong></Button>
                 </Link>
                 <Button onClick={handleFinish} variant={"link"}><ReplyIcon />Fazer novo pedido</Button>
